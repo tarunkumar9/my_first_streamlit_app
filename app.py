@@ -8,7 +8,7 @@ import random
 import altair as alt
 import numpy as np
 import pandas as pd
-from vega_datasets import data
+
 
 st.header('Homework 1')
 
@@ -103,7 +103,8 @@ st.markdown(
 "**Answers 4**: \n"
 )
 
-source1 = pd.read_json('imdb.json')
+con = pd.read_json('imdb.json')
+source1=con.astype(str)
 st.write(source1)
 
 barchart = alt.Chart(source1).mark_bar().encode(
